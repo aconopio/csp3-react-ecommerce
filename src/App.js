@@ -1,5 +1,12 @@
-import logo from './logo.svg';
+import React from 'react';
+// import logo from './logo.svg';
+import { Fragment, useState, useEffect } from 'react';
+import { Container } from 'react-bootstrap';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom'
+import Register from './pages/Register';
 import './App.css';
+import { UserProvider } from './UserContext';
 
 function App() {
   return (
