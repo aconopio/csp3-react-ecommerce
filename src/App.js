@@ -1,31 +1,55 @@
 import React from 'react';
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import { Fragment, useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom'
+import AppNavbar from './components/AppNavbar';
 import Register from './pages/Register';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import ProductView from './components/ProductView'
+import Login from './pages/Login';
+import Logout from './pages/Logout';
 import './App.css';
 import { UserProvider } from './UserContext';
 
 function App() {
+  // State hook for the user state that's defined for a global scope
+  const [user, setUser] = useState({
+    // email: localStorage.getItem('email')
+    id: null,
+    isAdmin: null
+  })
+
+  // Function for clearing local sorage on logout
+  const unsetUser = () => {
+    localStorage.clear();
+  }
+
+  // Used to check if the user info is properly stored during login and localStorage info is cleared upon logout
+  useEffect(() => {
+    console.log(user);
+    console.log(localStorage);
+  }, [user])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider value={{user, setUser, unsetUser}}>
+      <Router>
+          <AppNavbar />
+          <Container>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:productId" element={<ProductView />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />           
+              <Route path="/logout" element={<Logout />} />
+              {/*<Route path="*" element={<Error />} />*/}
+            </Routes>
+          </Container>
+      </Router>
+    </UserProvider> 
   );
 }
 
