@@ -9,6 +9,7 @@ import Register from './pages/Register';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import ProductView from './components/ProductView'
+import MyOrders from './pages/MyOrders';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
 import './App.css';
@@ -43,6 +44,7 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/products/:productId" element={<ProductView />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/myorders" element={<MyOrders />} />
               <Route path="/login" element={<Login />} />           
               <Route path="/logout" element={<Logout />} />
               {/*<Route path="*" element={<Error />} />*/}

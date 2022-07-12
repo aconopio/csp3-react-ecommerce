@@ -14,7 +14,6 @@ export default function Register(){
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');
 	const [email, setEmail] = useState('');
-	const [mobileNo, setMobileNo] = useState('');
 	const [password1, setPassword1] = useState('');
 	const [password2, setPassword2] = useState('');
 	// State to determine whether submit button is enabled or not
@@ -59,7 +58,6 @@ export default function Register(){
 		                        firstName: firstName,
 		                        lastName: lastName,
 		                        email: email,
-		                        mobileNo: mobileNo,
 		                        password: password1
 		                    })
 		                })
@@ -74,7 +72,6 @@ export default function Register(){
 		                        setFirstName('');
 		                        setLastName('');
 		                        setEmail('');
-		                        setMobileNo('');
 		                        setPassword1('');
 		                        setPassword2('');
 
@@ -116,13 +113,13 @@ export default function Register(){
 
 	useEffect(() => {
 		// Validation to enable submit button when all fields are populated and both passwords match
-		if((firstName !== '' && lastName !== '' && email !== '' && mobileNo !== '' && mobileNo.length === 11 && password1 !== '' && password2 !== '') && (password1 === password2)){
+		if((firstName !== '' && lastName !== '' && email !== '' && password1 !== '' && password2 !== '') && (password1 === password2)){
 			setIsActive(true);
 		}
 		else{
 			setIsActive(false);
 		}
-	}, [firstName, lastName, mobileNo, mobileNo.length, email, password1, password2]);
+	}, [firstName, lastName, email, password1, password2]);
 
 	return (
 		(user.id !== null) ?
@@ -165,17 +162,6 @@ export default function Register(){
 		    <Form.Text className="text-muted">
 		      We'll never share your email with anyone else.
 		    </Form.Text>
-		  </Form.Group>
-
-		  <Form.Group controlId="mobileNo">
-		      <Form.Label>Mobile Number</Form.Label>
-		      <Form.Control 
-		          type="text" 
-		          placeholder="Enter Mobile Number"
-		          value={mobileNo} 
-		          onChange={e => setMobileNo(e.target.value)}
-		          required
-		      />
 		  </Form.Group>
 
 

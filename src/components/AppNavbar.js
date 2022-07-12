@@ -23,7 +23,10 @@ export default function AppNavbar(){
 		        <Nav.Link as={Link} to="/" exact>Home</Nav.Link>
 		        <Nav.Link as={Link} to="/products" exact>Products</Nav.Link>
 		        {(user.id !== null) ?
+		        	<React.Fragment>
 		        	<Nav.Link as={Link} to="/logout" exact>Logout</Nav.Link>
+		        	<Nav.Link as={Link} to="/myorders" exact>My Orders</Nav.Link>
+		        	</React.Fragment>
 		        	:
 		        	<React.Fragment>
 		        		<Nav.Link as={Link} to="/login" exact>Login</Nav.Link>

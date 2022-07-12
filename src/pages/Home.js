@@ -9,7 +9,7 @@ export default function Home(){
 	const data = {
 	    title: "Happy Paws ",
 	    content: "Your furbaby's health buddy",
-	    destination: "/courses",
+	    destination: "/products",
 	    label: "Shop here"
 	}
 

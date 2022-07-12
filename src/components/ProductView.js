@@ -40,7 +40,7 @@ export default function ProductView() {
 					icon: "success",
 					text: "You have successfully purchased this product."
 				})
-				history("/products/active");
+				history("/products/");
 			}
 			else{
 				Swal.fire({

@@ -8,7 +8,7 @@ export default function Highlights(){
 				<Card style={{ width: '18rem' }} className="cardHighlight p-3">
 				  <Card.Body>
 				    <Card.Title>
-				    	<h2>Learn from Home</h2>
+				    	<h2>Dogs</h2>
 				    </Card.Title>
 				    <Card.Text>
 				      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -20,7 +20,7 @@ export default function Highlights(){
 				<Card style={{ width: '18rem' }} className="cardHighlight p-3">
 				  <Card.Body>
 				    <Card.Title>
-				    	<h2>Study now, Pay later</h2>
+				    	<h2>Cats</h2>
 				    </Card.Title>
 				    <Card.Text>
 				      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -32,7 +32,7 @@ export default function Highlights(){
 				<Card style={{ width: '18rem' }} className="cardHighlight p-3">
 				  <Card.Body>
 				    <Card.Title>
-				    	<h2>Be Part of Our Community</h2>
+				    	<h2>Fish</h2>
 				    </Card.Title>
 				    <Card.Text>
 				      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
