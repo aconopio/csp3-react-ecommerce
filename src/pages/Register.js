@@ -27,7 +27,7 @@ export default function Register(){
 	function registerUser(e){
 		e.preventDefault();
 
-		fetch('http://localhost:4000/users/checkEmail', {
+		fetch('https://calm-shore-32122.herokuapp.com/users/checkEmail', {
 		    method: "POST",
 		    headers: {
 		        'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ export default function Register(){
 		    		});
 		    	}else {
 
-		                fetch('http://localhost:4000/users/register', {
+		                fetch('https://calm-shore-32122.herokuapp.com/users/register', {
 		                    method: "POST",
 		                    headers: {
 		                        'Content-Type': 'application/json'

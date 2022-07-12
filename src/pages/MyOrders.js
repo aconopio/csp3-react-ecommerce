@@ -18,7 +18,7 @@ export default function MyOrders() {
 
 	// Retrieves the courses from the database upon initial render of the "Courses" component
 	const fetchData = () => {
-		fetch('http://localhost:4000/users/myorders/', {
+		fetch('https://calm-shore-32122.herokuapp.com/users/myorders/', {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",

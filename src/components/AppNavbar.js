@@ -22,15 +22,31 @@ export default function AppNavbar(){
 		      <Nav className="me-auto">
 		        <Nav.Link as={Link} to="/" exact>Home</Nav.Link>
 		        <Nav.Link as={Link} to="/products" exact>Products</Nav.Link>
-		        {(user.id !== null) ?
+		        {(user.id !== null && user.isAdmin) ?
 		        	<React.Fragment>
+		        	<Nav.Link as={Link} to="/admin" exact>Admin</Nav.Link>
 		        	<Nav.Link as={Link} to="/logout" exact>Logout</Nav.Link>
-		        	<Nav.Link as={Link} to="/myorders" exact>My Orders</Nav.Link>
 		        	</React.Fragment>
 		        	:
 		        	<React.Fragment>
-		        		<Nav.Link as={Link} to="/login" exact>Login</Nav.Link>
-		        		<Nav.Link as={Link} to="/register" exact>Register</Nav.Link>
+		        	</React.Fragment>
+		        }
+		        {(user.id !== null && user.isAdmin == false) ?
+		        	<React.Fragment>
+		        	<Nav.Link as={Link} to="/myorders" exact>My Orders</Nav.Link>
+		        	<Nav.Link as={Link} to="/logout" exact>Logout</Nav.Link>
+		        	</React.Fragment>
+		        	:
+		        	<React.Fragment>
+		        	</React.Fragment>
+		        }
+		        {(user.id === null) ?
+		        	<React.Fragment>
+		        	<Nav.Link as={Link} to="/login" exact>Login</Nav.Link>
+		        	<Nav.Link as={Link} to="/register" exact>Register</Nav.Link>
+		        	</React.Fragment>
+		        	:
+		        	<React.Fragment>
 		        	</React.Fragment>
 		        }
 		        

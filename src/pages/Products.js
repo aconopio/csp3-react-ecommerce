@@ -16,7 +16,7 @@ export default function Courses() {
 
 	// Retrieves the courses from the database upon initial render of the "Courses" component
 	const fetchData = () => {
-		fetch('http://localhost:4000/products/active')
+		fetch('https://calm-shore-32122.herokuapp.com/products/active')
 		.then(res => res.json())
 		.then(data => {
 			console.log(data);

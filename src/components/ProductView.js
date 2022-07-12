@@ -20,7 +20,7 @@ export default function ProductView() {
 	const [price, setPrice] = useState(0);
 
 	const checkout = (productId) => {
-		fetch('http://localhost:4000/users/checkout', {
+		fetch('https://calm-shore-32122.herokuapp.com/users/checkout', {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -56,7 +56,7 @@ export default function ProductView() {
 
 		console.log(productId);
 
-		fetch(`http://localhost:4000/products/${productId}`)
+		fetch(`https://calm-shore-32122.herokuapp.com/products/${productId}`)
 		.then(res => res.json())
 		.then(data => {
 			console.log(data);

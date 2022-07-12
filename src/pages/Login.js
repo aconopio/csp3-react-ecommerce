@@ -28,7 +28,7 @@ export default function Login(){
                 .then(data => {})
             */
 
-            fetch('http://localhost:4000/users/login',{
+            fetch('https://calm-shore-32122.herokuapp.com/users/login',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -86,7 +86,7 @@ export default function Login(){
         // "retrieveUserDetails" function to convert JWT from the fetch request
 
         const retrieveUserDetails = (token) => {
-            fetch('http://localhost:4000/users/details',{
+            fetch('https://calm-shore-32122.herokuapp.com/users/details',{
                 headers: {
                     Authorization: `Bearer ${ token }`
                 }
