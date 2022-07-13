@@ -12,6 +12,8 @@ import ProductView from './components/ProductView'
 import MyOrders from './pages/MyOrders';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
+import NewProduct from './pages/NewProduct';
+import AllProducts from './pages/AllProducts';
 import './App.css';
 import { UserProvider } from './UserContext';
 
@@ -47,6 +49,8 @@ function App() {
               <Route path="/myorders" element={<MyOrders />} />
               <Route path="/login" element={<Login />} />           
               <Route path="/logout" element={<Logout />} />
+              <Route path="/newproduct" element={<NewProduct />} />
+              <Route path="/allproducts" element={<AllProducts />} />
               {/*<Route path="*" element={<Error />} />*/}
             </Routes>
           </Container>

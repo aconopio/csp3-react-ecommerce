@@ -4,6 +4,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link, NavLink } from 'react-router-dom';
 import UserContext from '../UserContext';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { LinkContainer } from 'react-router-bootstrap';
 
 export default function AppNavbar(){
 	// State to store the user information stored in the login page
@@ -21,10 +23,20 @@ export default function AppNavbar(){
 		    <Navbar.Collapse id="basic-navbar-nav">
 		      <Nav className="me-auto">
 		        <Nav.Link as={Link} to="/" exact>Home</Nav.Link>
-		        <Nav.Link as={Link} to="/products" exact>Products</Nav.Link>
+		        <Nav.Link as={Link} to="/products" exact>Shop</Nav.Link>
 		        {(user.id !== null && user.isAdmin) ?
 		        	<React.Fragment>
-		        	<Nav.Link as={Link} to="/admin" exact>Admin</Nav.Link>
+		        	<NavDropdown title="Admin" id="admin-nav-dropdown">
+                      <LinkContainer to="/newproduct">
+                        <NavDropdown.Item>Create Product</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/allproducts">
+                        <NavDropdown.Item>All Products</NavDropdown.Item>
+                      </LinkContainer>
+                      <LinkContainer to="/admin/users">
+                        <NavDropdown.Item>Users</NavDropdown.Item>
+                      </LinkContainer>
+		        	</NavDropdown>
 		        	<Nav.Link as={Link} to="/logout" exact>Logout</Nav.Link>
 		        	</React.Fragment>
 		        	:

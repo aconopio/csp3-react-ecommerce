@@ -95,14 +95,7 @@ export default function Register(){
 		                })
 		            };
 
-
-		    		
-		    	
-
-
 		})
-
-
 		// Clear input fields
 		setEmail('');
 		setPassword1('');
