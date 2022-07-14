@@ -29,7 +29,9 @@ export default function ProductView() {
 				Authorization: `Bearer ${localStorage.getItem('token')}`
 			},
 			body: JSON.stringify({
-				productId: productId
+				productId: productId,
+				price: price,
+				name: name
 			})
 		})
 		.then(res => res.json())
@@ -68,7 +70,7 @@ export default function ProductView() {
 			setPrice(data.price);
 		})
 
-	}, [productId]);
+	}, [productId, name, description, price]);
 
 
 	return(

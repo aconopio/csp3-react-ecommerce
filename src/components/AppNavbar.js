@@ -33,8 +33,8 @@ export default function AppNavbar(){
                       <LinkContainer to="/adminproducts">
                         <NavDropdown.Item>All Products</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/admin/users">
-                        <NavDropdown.Item>Users</NavDropdown.Item>
+                      <LinkContainer to="/allorders">
+                        <NavDropdown.Item>All orders</NavDropdown.Item>
                       </LinkContainer>
 		        	</NavDropdown>
 		        	<Nav.Link as={Link} to="/logout" exact>Logout</Nav.Link>

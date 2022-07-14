@@ -15,6 +15,7 @@ import Logout from './pages/Logout';
 import NewProduct from './pages/NewProduct';
 import AdminProducts from './pages/AdminProducts';
 import AdminProductView from './components/AdminProductView'
+import AllOrders from './pages/AllOrders';
 import './App.css';
 import { UserProvider } from './UserContext';
 
@@ -53,6 +54,7 @@ function App() {
               <Route path="/newproduct" element={<NewProduct />} />
               <Route path="/adminproducts" element={<AdminProducts />} />
               <Route path="/adminproducts/:productId" element={<AdminProductView />} />
+              <Route path="/allorders" element={<AllOrders />} />
               {/*<Route path="*" element={<Error />} />*/}
             </Routes>
           </Container>
