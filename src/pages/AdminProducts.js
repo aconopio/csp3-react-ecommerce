@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState, useContext } from 'react';
 // import coursesData from '../data/coursesData'
-import ProductCard from '../components/ProductCard'
+import AdminProductCard from '../components/AdminProductCard'
 import React from 'react';
 import UserContext from '../UserContext'
 
@@ -25,7 +25,7 @@ export default function Courses() {
 			setCourses(data.map(product => {
 				
 				return (
-					<ProductCard key={product._id} productProp={product} />
+					<AdminProductCard key={product._id} productProp={product} />
 				);
 			}))
 			// setCourses(data);
@@ -39,7 +39,7 @@ export default function Courses() {
 	
 	return(
 		<Fragment>
-			<h1>Product List</h1>
+			<h1>All Products (admin)</h1>
 			{courses}
 		</Fragment>
 	)

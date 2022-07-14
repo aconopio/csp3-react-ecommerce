@@ -30,7 +30,7 @@ export default function AppNavbar(){
                       <LinkContainer to="/newproduct">
                         <NavDropdown.Item>Create Product</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to="/allproducts">
+                      <LinkContainer to="/adminproducts">
                         <NavDropdown.Item>All Products</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/admin/users">
@@ -43,7 +43,7 @@ export default function AppNavbar(){
 		        	<React.Fragment>
 		        	</React.Fragment>
 		        }
-		        {(user.id !== null && user.isAdmin == false) ?
+		        {(user.id !== null && user.isAdmin === false) ?
 		        	<React.Fragment>
 		        	<Nav.Link as={Link} to="/myorders" exact>My Orders</Nav.Link>
 		        	<Nav.Link as={Link} to="/logout" exact>Logout</Nav.Link>

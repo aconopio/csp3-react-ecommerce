@@ -39,6 +39,7 @@ export default function Courses() {
 	
 	return(
 		<Fragment>
+			<h1>Available products</h1>
 			{courses}
 		</Fragment>
 	)

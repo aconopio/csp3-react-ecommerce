@@ -4,6 +4,8 @@ import { Container, Card, Button, Row, Col } from 'react-bootstrap';
 import { useParams, useNavigate, Link} from 'react-router-dom'
 import UserContext from '../UserContext'
 import Swal from 'sweetalert2';
+import { Form } from 'react-bootstrap';
+
 
 export default function ProductView() {
 
