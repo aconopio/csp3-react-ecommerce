@@ -31,7 +31,7 @@ export default function AppNavbar(){
                         <NavDropdown.Item>Create Product</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/adminproducts">
-                        <NavDropdown.Item>All Products</NavDropdown.Item>
+                        <NavDropdown.Item>Update Products</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/allorders">
                         <NavDropdown.Item>All orders</NavDropdown.Item>
