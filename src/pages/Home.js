@@ -3,6 +3,8 @@ import Banner from '../components/Banner';
 import Highlights from '../components/Highlights';
 // import CourseCard from '../components/CourseCard';
 import React from 'react';
+import UserContext from '../UserContext'
+
 
 export default function Home(){
 
@@ -16,6 +18,7 @@ export default function Home(){
 	return (
 		<Fragment>
 			<Banner data={data}/>
+			<h4>Featured Products</h4>
 			<Highlights />
 		</Fragment>
 	)
