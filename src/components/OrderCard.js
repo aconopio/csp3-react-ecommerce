@@ -8,7 +8,7 @@ export default function OrderCard({orderProp}) {
     // console.log(props);
     // console.log(typeof props);
 
-    const {_id, productId, PurchasedOn} = orderProp;
+    const {_id, name, PurchasedOn} = orderProp;
 
     // Use the state hook for this component to be able to store its state
     // State are used to keep track of information related to individual components
@@ -39,8 +39,8 @@ export default function OrderCard({orderProp}) {
         <Card>
             <Card.Body>
                 <Card.Title>Order id: {_id}</Card.Title>
-                <Card.Subtitle>Product id:</Card.Subtitle>
-                <Card.Text>{productId}</Card.Text>
+                <Card.Subtitle>Product name:</Card.Subtitle>
+                <Card.Text>{name}</Card.Text>
                 <Card.Subtitle>Date:</Card.Subtitle>
                 <Card.Text>{PurchasedOn}</Card.Text>
             </Card.Body>
@@ -53,7 +53,7 @@ export default function OrderCard({orderProp}) {
 OrderCard.propTypes = {
     productProp: PropTypes.shape({
         _id: PropTypes.string.isRequired,
-        productId: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
         PurchasedOn: PropTypes.string.isRequired
     })
 }
