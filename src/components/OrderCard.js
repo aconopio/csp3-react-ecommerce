@@ -42,7 +42,7 @@ export default function OrderCard({orderProp}) {
                 <Card.Subtitle>Product name:</Card.Subtitle>
                 <Card.Text>{name}</Card.Text>
                 <Card.Subtitle>Date:</Card.Subtitle>
-                <Card.Text>{PurchasedOn}</Card.Text>
+                <Card.Text>{PurchasedOn.substring(0, 10)}</Card.Text>
             </Card.Body>
         </Card>
     )

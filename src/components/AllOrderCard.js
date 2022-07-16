@@ -40,13 +40,9 @@ export default function AllOrderCard({allOrderProp}) {
             <Card.Body>
                 <Card.Title>Order id: {_id}</Card.Title>
                 <Card.Subtitle>Date:</Card.Subtitle>
-                <Card.Text>{PurchasedOn}</Card.Text>
-                <Card.Subtitle>User id:</Card.Subtitle>
-                <Card.Text>{userId}</Card.Text>
+                <Card.Text>{PurchasedOn.substring(0, 10)}</Card.Text>
                 <Card.Subtitle>User email:</Card.Subtitle>
                 <Card.Text>{email}</Card.Text>
-                <Card.Subtitle>Product id:</Card.Subtitle>
-                <Card.Text>{productId}</Card.Text>
                 <Card.Subtitle>Product name:</Card.Subtitle>
                 <Card.Text>{name}</Card.Text>
                 <Card.Subtitle>Price:</Card.Subtitle>

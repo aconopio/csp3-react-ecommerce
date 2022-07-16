@@ -16,6 +16,8 @@ export default function MyOrders() {
 	// State that will be used to store the courses retrieved from the database
 	const [courses, setCourses] = useState([]);
 
+	// const {_id, productId, PurchasedOn, email, userId, name, price} = allOrderProp;
+
 	// Retrieves the courses from the database upon initial render of the "Courses" component
 	const fetchData = () => {
 		fetch('https://calm-shore-32122.herokuapp.com/orders/all/', {
@@ -49,6 +51,20 @@ export default function MyOrders() {
 	return(
 		<Fragment>
 			{courses}
+{/*			<table>
+					    <thead>
+					        <tr>
+					            <th>ID</th>
+					            <th>email</th>
+					        </tr>
+					    </thead>
+					    <tbody>
+					        <tr>
+					            <td>{}</td>
+					            <td>{}</td>
+					        </tr>
+					    </tbody>
+					</table>*/}
 		</Fragment>
 	)
 }
