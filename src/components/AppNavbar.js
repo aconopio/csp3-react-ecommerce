@@ -27,6 +27,9 @@ export default function AppNavbar(){
 		        {(user.id !== null && user.isAdmin) ?
 		        	<React.Fragment>
 		        	<NavDropdown title="Admin" id="admin-nav-dropdown">
+		        					<LinkContainer to="/admindashboard">
+		        					  <NavDropdown.Item>Admin Dashboard</NavDropdown.Item>
+		        					</LinkContainer>
                       <LinkContainer to="/newproduct">
                         <NavDropdown.Item>Create Product</NavDropdown.Item>
                       </LinkContainer>

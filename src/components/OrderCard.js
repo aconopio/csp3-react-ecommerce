@@ -36,13 +36,19 @@ export default function OrderCard({orderProp}) {
 
 
     return (
-        <Card>
-            <Card.Body>
+        <Card class="card-block border">
+            <Card.Body class="row p-3">
+                <div class="col-md-4">
                 <Card.Title>Order id: {_id}</Card.Title>
+                </div>
+                <div class="col-md-4">
                 <Card.Subtitle>Product name:</Card.Subtitle>
                 <Card.Text>{name}</Card.Text>
+                </div>
+                <div class="col-md-4">
                 <Card.Subtitle>Date:</Card.Subtitle>
                 <Card.Text>{PurchasedOn.substring(0, 10)}</Card.Text>
+                </div>
             </Card.Body>
         </Card>
     )

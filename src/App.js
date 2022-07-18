@@ -16,6 +16,8 @@ import NewProduct from './pages/NewProduct';
 import AdminProducts from './pages/AdminProducts';
 import AdminProductView from './components/AdminProductView'
 import AllOrders from './pages/AllOrders';
+import AdminDashboard from './pages/AdminDashboard';
+import NumberOfOrders from './components/NumberOfOrders'
 import './App.css';
 import { UserProvider } from './UserContext';
 
@@ -55,6 +57,7 @@ function App() {
               <Route path="/adminproducts" element={<AdminProducts />} />
               <Route path="/adminproducts/:productId" element={<AdminProductView />} />
               <Route path="/allorders" element={<AllOrders />} />
+              <Route path="/admindashboard" element={<AdminDashboard />} />
               {/*<Route path="*" element={<Error />} />*/}
             </Routes>
           </Container>

@@ -48,6 +48,7 @@ export default function MyOrders() {
 	
 	return(
 		<Fragment>
+			<h2>My orders</h2>
 			{courses}
 		</Fragment>
 	)

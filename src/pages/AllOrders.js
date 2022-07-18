@@ -50,21 +50,8 @@ export default function MyOrders() {
 	
 	return(
 		<Fragment>
+			<h2>All orders</h2>
 			{courses}
-{/*			<table>
-					    <thead>
-					        <tr>
-					            <th>ID</th>
-					            <th>email</th>
-					        </tr>
-					    </thead>
-					    <tbody>
-					        <tr>
-					            <td>{}</td>
-					            <td>{}</td>
-					        </tr>
-					    </tbody>
-					</table>*/}
 		</Fragment>
 	)
 }

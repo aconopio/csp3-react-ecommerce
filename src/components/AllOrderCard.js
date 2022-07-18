@@ -35,20 +35,26 @@ export default function AllOrderCard({allOrderProp}) {
     // }
 
 
-    return (
-        <Card>
-            <Card.Body>
-                <Card.Title>Order id: {_id}</Card.Title>
-                <Card.Subtitle>Date:</Card.Subtitle>
-                <Card.Text>{PurchasedOn.substring(0, 10)}</Card.Text>
-                <Card.Subtitle>User email:</Card.Subtitle>
-                <Card.Text>{email}</Card.Text>
-                <Card.Subtitle>Product name:</Card.Subtitle>
-                <Card.Text>{name}</Card.Text>
-                <Card.Subtitle>Price:</Card.Subtitle>
-                <Card.Text>{price}</Card.Text>
-            </Card.Body>
-        </Card>
+    return (        
+            <Card class="card-block border">
+                <Card.Body class="row p-3">
+                    <div class="col-md-4">
+                    <Card.Title>Order id: {_id}</Card.Title>
+                    </div>
+                    <div class="col-md-4">
+                    <Card.Subtitle>Date:</Card.Subtitle>
+                    <Card.Text>{PurchasedOn.substring(0, 10)}</Card.Text>
+                    <Card.Subtitle>User email:</Card.Subtitle>
+                    <Card.Text>{email}</Card.Text>
+                    </div>
+                    <div class="col-md-4">
+                    <Card.Subtitle>Product name:</Card.Subtitle>
+                    <Card.Text>{name}</Card.Text>
+                    <Card.Subtitle>Price:</Card.Subtitle>
+                    <Card.Text>{price}</Card.Text>
+                    </div>
+                </Card.Body>
+            </Card>
     )
 }
 
