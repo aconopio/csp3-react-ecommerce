@@ -16,28 +16,28 @@ export default function Courses() {
 
 	// Retrieves the courses from the database upon initial render of the "Courses" component
 	const fetchData = () => {
-		fetch('https://calm-shore-32122.herokuapp.com/products/active')
-		.then(res => res.json())
-		.then(data => {
-			console.log(data);
+		fetch('https://csp2-ecommerce.onrender.com/products/active')
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
 
-			//Sets the "courses" state to map the data retrieved from the fetch request into several "CourseCard" component
-			setCourses(data.map(product => {
-				
-				return (
-					<ProductCard key={product._id} productProp={product} />
-				);
-			}))
-			// setCourses(data);
-		})
+				//Sets the "courses" state to map the data retrieved from the fetch request into several "CourseCard" component
+				setCourses(data.map(product => {
+
+					return (
+						<ProductCard key={product._id} productProp={product} />
+					);
+				}))
+				// setCourses(data);
+			})
 	}
 
 	useEffect(() => {
 		fetchData()
 	}, []);
 
-	
-	return(
+
+	return (
 		<Fragment>
 			<h1>Available products</h1>
 			{courses}
