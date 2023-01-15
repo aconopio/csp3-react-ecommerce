@@ -10,7 +10,7 @@ export default function MyOrders() {
 	//console.log(coursesData);
 	//console.log(coursesData[0]);
 
-	
+
 	const { user, setUser } = useContext(UserContext);
 
 	// State that will be used to store the courses retrieved from the database
@@ -20,26 +20,26 @@ export default function MyOrders() {
 
 	// Retrieves the courses from the database upon initial render of the "Courses" component
 	const fetchData = () => {
-		fetch('https://calm-shore-32122.herokuapp.com/orders/all/', {
+		fetch('https://csp2-ecommerce.onrender.com/orders/all/', {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `Bearer ${localStorage.getItem('token')}`
 			}
 		})
-		.then(res => res.json())
-		.then(data => {
-			console.log(data);
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
 
-			// Sets the "courses" state to map the data retrieved from the fetch request into several "CourseCard" component
-			setCourses(data.map(order => {
-				
-				return (
-					<AllOrderCard key={order._id} allOrderProp={order} />
-				);
-			}))
-			// setCourses(data);
-		})
+				// Sets the "courses" state to map the data retrieved from the fetch request into several "CourseCard" component
+				setCourses(data.map(order => {
+
+					return (
+						<AllOrderCard key={order._id} allOrderProp={order} />
+					);
+				}))
+				// setCourses(data);
+			})
 	}
 
 
@@ -47,8 +47,8 @@ export default function MyOrders() {
 		fetchData()
 	}, []);
 
-	
-	return(
+
+	return (
 		<Fragment>
 			<h2>All orders</h2>
 			{courses}
