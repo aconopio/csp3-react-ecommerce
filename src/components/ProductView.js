@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useContext } from 'react';
 import { Container, Card, Button, Row, Col } from 'react-bootstrap';
-import { useParams, useNavigate, Link} from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import UserContext from '../UserContext'
 import Swal from 'sweetalert2';
 import { Form } from 'react-bootstrap';
@@ -22,7 +22,7 @@ export default function ProductView() {
 	const [price, setPrice] = useState(0);
 
 	const checkout = (productId) => {
-		fetch('https://calm-shore-32122.herokuapp.com/users/checkout', {
+		fetch('https://csp2-ecommerce.onrender.com/users/checkout', {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -34,63 +34,63 @@ export default function ProductView() {
 				name: name
 			})
 		})
-		.then(res => res.json())
-		.then(data => {
-			console.log(data);
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
 
-			if(data){
-				Swal.fire({
-					title: "Successfully purchased",
-					icon: "success",
-					text: "You have successfully purchased this product."
-				})
-				history("/products/");
-			}
-			else{
-				Swal.fire({
-					title: "Something went wrong",
-					icon: "error",
-					text: "Please try again."
-				})
-			}
-		})
+				if (data) {
+					Swal.fire({
+						title: "Successfully purchased",
+						icon: "success",
+						text: "You have successfully purchased this product."
+					})
+					history("/products/");
+				}
+				else {
+					Swal.fire({
+						title: "Something went wrong",
+						icon: "error",
+						text: "Please try again."
+					})
+				}
+			})
 	}
 
-	useEffect(()=> {
+	useEffect(() => {
 
 		console.log(productId);
 
-		fetch(`https://calm-shore-32122.herokuapp.com/products/${productId}`)
-		.then(res => res.json())
-		.then(data => {
-			console.log(data);
+		fetch(`https://csp2-ecommerce.onrender.com/products/${productId}`)
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
 
-			setName(data.name);
-			setDescription(data.description);
-			setPrice(data.price);
-		})
+				setName(data.name);
+				setDescription(data.description);
+				setPrice(data.price);
+			})
 
 	}, [productId, name, description, price]);
 
 
-	return(
+	return (
 		<Container>
 			<Row>
 				<Card style={{ width: '18rem' }}>
-				  <Card.Body className="text-center">
-				    <Card.Title>{name}</Card.Title>
-				    <Card.Subtitle className="mb-2 text-muted">Description:</Card.Subtitle>
-				    <Card.Text>{description}</Card.Text>
-				    <Card.Subtitle className="mb-2 text-muted">Price:</Card.Subtitle>
-				    <Card.Text>Php {price}</Card.Text>
-				    { user.id !== null ?
-				    	<Button variant="primary" onClick={() => checkout(productId)} block>Order</Button>
-				    	:
-				    	<Link className="btn btn-danger btn-block" to="/login">Log in to Order</Link>
+					<Card.Body className="text-center">
+						<Card.Title>{name}</Card.Title>
+						<Card.Subtitle className="mb-2 text-muted">Description:</Card.Subtitle>
+						<Card.Text>{description}</Card.Text>
+						<Card.Subtitle className="mb-2 text-muted">Price:</Card.Subtitle>
+						<Card.Text>Php {price}</Card.Text>
+						{user.id !== null ?
+							<Button variant="primary" onClick={() => checkout(productId)} block>Order</Button>
+							:
+							<Link className="btn btn-danger btn-block" to="/login">Log in to Order</Link>
 
-				    }
-				    
-				  </Card.Body>
+						}
+
+					</Card.Body>
 				</Card>
 			</Row>
 		</Container>
