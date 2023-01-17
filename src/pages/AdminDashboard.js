@@ -45,7 +45,7 @@ export default function AdminDashboard() {
 			<div class="card-block border">
 				<div class="row p-3">
 					<div class="col-md-6">
-						<h5 class="card-title">{totalProducts}</h5>
+						<h5 class="card-title">{totalProductsm}</h5>
 						<h6 class="card-subtitle mb-2 text-muted">Number of products</h6>
 					</div>
 					<div class="col-md-6">
