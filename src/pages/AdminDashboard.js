@@ -22,7 +22,7 @@ export default function AdminDashboard() {
 	}
 
 	const numberOfOrders = () => {
-		fetch('https://csp2-ecommerce.onrender.com/orders/all/')
+		fetch('https://csp2-ecommerce.onrender.com/orders/totalorders/')
 			.then(res => res.json())
 			.then(data => {
 				console.log(data);
