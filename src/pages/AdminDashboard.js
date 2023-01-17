@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import UserContext from '../UserContext'
 import { useContext, useState, useEffect } from 'react';
-// import NumberOfOrders from '../components/NumberOfOrders';
+
 
 export default function AdminDashboard() {
 
