@@ -50,7 +50,7 @@ export default function Register() {
 					setPrice('');
 
 					Swal.fire({
-						title: 'Product creation succesful',
+						title: 'Product creation successful',
 						icon: 'success',
 						text: 'New product added!'
 					});
