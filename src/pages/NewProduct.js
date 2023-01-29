@@ -50,9 +50,9 @@ export default function Register() {
 					setPrice('');
 
 					Swal.fire({
-						title: 'Registration successful',
+						title: 'Product creation succesful',
 						icon: 'success',
-						text: 'Welcome to Happy Paws!'
+						text: 'New product added!'
 					});
 
 					history("/products");
