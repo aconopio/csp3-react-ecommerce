@@ -45,7 +45,7 @@ export default function AdminProductView() {
 
 				if (data === true) {
 					Swal.fire({
-						title: "Successfully updated product",
+						title: "Product updated",
 						icon: "success",
 					})
 					history('/adminproducts');

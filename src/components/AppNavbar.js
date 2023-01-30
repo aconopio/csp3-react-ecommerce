@@ -7,7 +7,7 @@ import UserContext from '../UserContext';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap';
 
-export default function AppNavbar(){
+export default function AppNavbar() {
 	// State to store the user information stored in the login page
 	// const [user, setUser] = useState(localStorage.getItem("email"));
 	// console.log(user);
@@ -17,58 +17,58 @@ export default function AppNavbar(){
 	return (
 
 		<Navbar bg="primary" expand="lg">
-		  
-		    <Navbar.Brand as={Link} to="/">Happy Paws</Navbar.Brand>
-		    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-		    <Navbar.Collapse id="basic-navbar-nav">
-		      <Nav className="me-auto">
-		        <Nav.Link as={Link} to="/" exact>Home</Nav.Link>
-		        <Nav.Link as={Link} to="/products" exact>Shop</Nav.Link>
-		        {(user.id !== null && user.isAdmin) ?
-		        	<React.Fragment>
-		        	<NavDropdown title="Admin" id="admin-nav-dropdown">
-		        					<LinkContainer to="/admindashboard">
-		        					  <NavDropdown.Item>Admin Dashboard</NavDropdown.Item>
-		        					</LinkContainer>
-                      <LinkContainer to="/newproduct">
-                        <NavDropdown.Item>Create Product</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to="/adminproducts">
-                        <NavDropdown.Item>Update Products</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to="/allorders">
-                        <NavDropdown.Item>All orders</NavDropdown.Item>
-                      </LinkContainer>
-		        	</NavDropdown>
-		        	<Nav.Link as={Link} to="/logout" exact>Logout</Nav.Link>
-		        	</React.Fragment>
-		        	:
-		        	<React.Fragment>
-		        	</React.Fragment>
-		        }
-		        {(user.id !== null && user.isAdmin === false) ?
-		        	<React.Fragment>
-		        	<Nav.Link as={Link} to="/myorders" exact>My Orders</Nav.Link>
-		        	<Nav.Link as={Link} to="/logout" exact>Logout</Nav.Link>
-		        	</React.Fragment>
-		        	:
-		        	<React.Fragment>
-		        	</React.Fragment>
-		        }
-		        {(user.id === null) ?
-		        	<React.Fragment>
-		        	<Nav.Link as={Link} to="/login" exact>Login</Nav.Link>
-		        	<Nav.Link as={Link} to="/register" exact>Register</Nav.Link>
-		        	</React.Fragment>
-		        	:
-		        	<React.Fragment>
-		        	</React.Fragment>
-		        }
-		        
-		        
-		      </Nav>
-		    </Navbar.Collapse>
-		  
+
+			<Navbar.Brand as={Link} to="/">Happy Paws</Navbar.Brand>
+			<Navbar.Toggle aria-controls="basic-navbar-nav" />
+			<Navbar.Collapse id="basic-navbar-nav">
+				<Nav className="justify-content-end" activeKey="/home">
+					<Nav.Link as={Link} to="/" exact>Home</Nav.Link>
+					<Nav.Link as={Link} to="/products" exact>Shop</Nav.Link>
+					{(user.id !== null && user.isAdmin) ?
+						<React.Fragment>
+							<NavDropdown title="Admin" id="admin-nav-dropdown">
+								<LinkContainer to="/admindashboard">
+									<NavDropdown.Item>Admin Dashboard</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to="/newproduct">
+									<NavDropdown.Item>Create Product</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to="/adminproducts">
+									<NavDropdown.Item>Update Products</NavDropdown.Item>
+								</LinkContainer>
+								<LinkContainer to="/allorders">
+									<NavDropdown.Item>All orders</NavDropdown.Item>
+								</LinkContainer>
+							</NavDropdown>
+							<Nav.Link as={Link} to="/logout" exact>Logout</Nav.Link>
+						</React.Fragment>
+						:
+						<React.Fragment>
+						</React.Fragment>
+					}
+					{(user.id !== null && user.isAdmin === false) ?
+						<React.Fragment>
+							<Nav.Link as={Link} to="/myorders" exact>My Orders</Nav.Link>
+							<Nav.Link as={Link} to="/logout" exact>Logout</Nav.Link>
+						</React.Fragment>
+						:
+						<React.Fragment>
+						</React.Fragment>
+					}
+					{(user.id === null) ?
+						<React.Fragment>
+							<Nav.Link as={Link} to="/login" exact>Login</Nav.Link>
+							<Nav.Link as={Link} to="/register" exact>Register</Nav.Link>
+						</React.Fragment>
+						:
+						<React.Fragment>
+						</React.Fragment>
+					}
+
+
+				</Nav>
+			</Navbar.Collapse>
+
 		</Navbar>
 	)
 }
