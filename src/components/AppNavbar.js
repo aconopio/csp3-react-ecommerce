@@ -21,8 +21,8 @@ export default function AppNavbar() {
 			<Navbar.Brand as={Link} to="/">Happy Paws</Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
-				<Nav className="me-auto">
-					<Nav.Link as={Link} to="/" exact>Home</Nav.Link>
+				<Nav className="">
+					<Nav.Link className="me-auto" as={Link} to="/" exact>Home</Nav.Link>
 					<Nav.Link as={Link} to="/products" exact>Shop</Nav.Link>
 					{(user.id !== null && user.isAdmin) ?
 						<React.Fragment>
