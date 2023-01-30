@@ -21,7 +21,7 @@ export default function AppNavbar() {
 			<Navbar.Brand as={Link} to="/">Happy Paws</Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
-				<Nav className="justify-content-end" activeKey="/home">
+				<Nav className="justify-content-end">
 					<Nav.Link as={Link} to="/" exact>Home</Nav.Link>
 					<Nav.Link as={Link} to="/products" exact>Shop</Nav.Link>
 					{(user.id !== null && user.isAdmin) ?
