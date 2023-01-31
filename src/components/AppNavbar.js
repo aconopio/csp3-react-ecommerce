@@ -22,10 +22,12 @@ export default function AppNavbar() {
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="container-fluid">
-					<Nav.Item className="me-auto">
+					<Nav.Item>
 						<Nav.Link as={Link} to="/" exact>Home</Nav.Link>
 					</Nav.Item>
-					<Nav.Link as={Link} to="/products" exact>Shop</Nav.Link>
+					<Nav.Item className="me-auto">
+						<Nav.Link as={Link} to="/products" exact>Shop</Nav.Link>
+					</Nav.Item>
 					{(user.id !== null && user.isAdmin) ?
 						<React.Fragment>
 							<NavDropdown title="Admin" id="admin-nav-dropdown">
@@ -59,8 +61,12 @@ export default function AppNavbar() {
 					}
 					{(user.id === null) ?
 						<React.Fragment>
-							<Nav.Link as={Link} to="/login" exact>Login</Nav.Link>
-							<Nav.Link as={Link} to="/register" exact>Register</Nav.Link>
+							<Nav.Item>
+								<Nav.Link as={Link} to="/login" exact>Login</Nav.Link>
+							</Nav.Item>
+							<Nav.Item>
+								<Nav.Link as={Link} to="/register" exact>Register</Nav.Link>
+							</Nav.Item>
 						</React.Fragment>
 						:
 						<React.Fragment>
