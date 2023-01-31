@@ -30,6 +30,7 @@ export default function AppNavbar() {
 					</Nav.Item>
 					{(user.id !== null && user.isAdmin) ?
 						<React.Fragment>
+							<Nav.Link>Hi, username</Nav.Link>
 							<NavDropdown title="Admin" id="admin-nav-dropdown">
 								<LinkContainer to="/admindashboard">
 									<NavDropdown.Item>Admin Dashboard</NavDropdown.Item>
@@ -52,6 +53,7 @@ export default function AppNavbar() {
 					}
 					{(user.id !== null && user.isAdmin === false) ?
 						<React.Fragment>
+							<Nav.Link>Hi, username</Nav.Link>
 							<Nav.Link as={Link} to="/myorders" exact>My Orders</Nav.Link>
 							<Nav.Link as={Link} to="/logout" exact>Logout</Nav.Link>
 						</React.Fragment>
